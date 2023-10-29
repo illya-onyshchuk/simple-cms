@@ -1,18 +1,17 @@
 import React from 'react';
-import cl from '../defaultStyle.module.css'
-import { tables } from '../testdb/tables'
+import { tabs } from '../../testdb/tabs';
+import Table from 'react-bootstrap/Table';
 
-
-const DummyList = () => {
-  const filterTables = tables.filter(table => table.id === 'dummyList');
+const DummyChart = () => {
+  const filterTabs = tabs.filter(table => table.id === 'dummyChart');
 
   return (
     <>
-      {filterTables.map(table => 
-        tables.length ?
-          <div key={table.id}>
+      {filterTabs.map(table => 
+        filterTabs.length ?
+          <div key={table.id} className='mt-3'>
             <h2>{table.title}</h2>
-            <table  className={cl.customTable}>
+            <Table striped bordered hover>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -27,7 +26,7 @@ const DummyList = () => {
                         <td>{table.order}</td>
                     </tr>
                 </tbody>
-            </table>
+            </Table>
           </div>
           : null
         )}
@@ -35,4 +34,4 @@ const DummyList = () => {
   );
 }
 
-export default DummyList;
+export default DummyChart;

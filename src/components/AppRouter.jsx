@@ -1,23 +1,23 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { publickRoutes } from '../router/routes';
 import Loader from './Loader/Loader';
+import { tabs } from '../testdb/tabs';
 
 const AppRouter = () => {
   return (
-    <Suspense fallback={<Loader/>}>
-      <Routes>
-        {publickRoutes.map(route => 
-          <Route 
-            key={route.id}
-            path={route.id}
-            element={route.component}
-            exact={route.expect}
-          />
-        )}
-        <Route path='*' element={<Navigate to={'/dummyTable'}/>}/>
-      </Routes>
-    </Suspense>
+      <Suspense fallback={<Loader/>}>
+        <Routes>
+          {tabs.map(tab => (
+            <Route 
+              key={tab.id}
+              path={`/${tab.id}`}
+              Component={lazy(() => import(`./${tab.path}`))}
+              exact
+            />
+          ))}
+          <Route path='*' element={<Navigate to={`./${tabs[0].id}`}/>}/>
+        </Routes>
+      </Suspense>
   );
 }
 

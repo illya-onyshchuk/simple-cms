@@ -1,26 +1,25 @@
-.navbar__costom {
-  margin: 10px 10px 10px 0; 
-  font-size: 19px; 
+.navbar {
+  font-size: 18px; 
   font-weight: 500;
-  padding-right: 10px;
 }
 
-.navbar__costom a {
+.navbar a {
   text-decoration: none;
-  padding-right: 10px;
+  margin-right: 28px;
   color: rgb(67, 59, 59);
   transition: all .3s linear;
 }
 
 
-a:nth-child(3) {
-  padding-right: 0;
+a:last-child {
+  margin-right: 0;
 }
 
 a:hover {
-  color: rgb(170, 20, 20);
+  color: rgb(27, 118, 231);
 }
 
-.active__link {
-  color: rgb(170, 20, 20);
+.navbar .active__link  {
+  color: rgb(27, 118, 231);
+  text-decoration: underline;
 }

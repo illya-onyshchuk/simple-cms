@@ -1,0 +1,26 @@
+.navbar__costom {
+  margin: 10px 10px 10px 0; 
+  font-size: 19px; 
+  font-weight: 500;
+  padding-right: 10px;
+}
+
+.navbar__costom a {
+  text-decoration: none;
+  padding-right: 10px;
+  color: rgb(67, 59, 59);
+  transition: all .3s linear;
+}
+
+
+a:nth-child(3) {
+  padding-right: 0;
+}
+
+a:hover {
+  color: rgb(170, 20, 20);
+}
+
+.active__link {
+  color: rgb(170, 20, 20);
+}

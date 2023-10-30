@@ -1,24 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { tabs } from '../../testdb/tabs';
-import cl from './NavLink.module.css'
+import cl from './NavLinks.module.css'
 import { Container, Navbar, Nav } from 'react-bootstrap';
 
 const NavLinks = () => {
+
+  const setActive = ({isActive}) => isActive ? cl.active__link : '';
+
   return (
     <Navbar expand='lg' bg="light" data-bs-theme="light">
       <Container>
-        <Nav className="me-auto">
+        <Nav className={cl.navbar__costom}>
           {[...tabs]
           .sort((a,b) => a.order - b.order)
           .map(tab => (
-             <Link
+             <NavLink
                key={tab.id}
                to={`/${tab.id}`}
-               className={cl.navbar__link}
+               className={setActive}
               >
               {tab.title}
-             </Link>
+             </NavLink>
           ))}
         </Nav>
       </Container>

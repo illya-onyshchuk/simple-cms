@@ -11,7 +11,7 @@ const AppRouter = () => {
             <Route 
               key={tab.id}
               path={`/${tab.id}`}
-              Component={lazy(() => import(`./${tab.path}`))}
+              Component={lazy(() => delayForDemo( import(`./${tab.path}`)) )}
               exact
             />
           ))}
@@ -22,3 +22,13 @@ const AppRouter = () => {
 }
 
 export default AppRouter;
+
+
+
+// Example delay
+async function delayForDemo(promise) {
+  await new Promise(resolve => {
+    setTimeout(resolve, 1000);
+  });
+  return promise;
+}

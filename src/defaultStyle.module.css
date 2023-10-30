@@ -1,28 +1,10 @@
-h2 {
-  font-size: 24px; 
-  color: #333; 
+.table__container {
+  overflow: auto; /* Додайте прокрутку, якщо контент таблиці перевищує встановлені розміри */
 }
 
-.customTable {
-  width: 100%; /* Задаємо повну ширину таблиці */
-  border-collapse: collapse; /* Задаємо об'єднання рамок таблиці */
-}
-
-.customTable th, .customTable td {
-  border: 1px solid #333; /* Задаємо рамку для всіх клітинок таблиці */
-  padding: 10px; /* Задаємо відступи всередині клітинок таблиці */
-  text-align: center; /* Вирівнюємо текст в центрі клітинок таблиці */
-}
-
-.customTable th {
-  background-color: #333; /* Задаємо фоновий колір для заголовків таблиці */
-  color: #fff; /* Задаємо колір тексту для заголовків таблиці */
-}
-
-.customTable tbody tr:nth-child(even) {
-  background-color: #f2f2f2; /* Задаємо фоновий колір для парних рядків таблиці */
-}
-
-.customTable tbody tr:hover {
-  background-color: #ddd; /* Змінюємо фон при наведенні курсору на рядок таблиці */
+.table__container th, td {
+  max-width: 50px;
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
+  overflow: hidden; 
 }

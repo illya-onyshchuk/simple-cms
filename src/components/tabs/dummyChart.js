@@ -1,6 +1,7 @@
 import React from 'react';
 import { tabs } from '../../testdb/tabs';
 import Table from 'react-bootstrap/Table';
+import cl from '../../defaultStyle.module.css'
 
 const DummyChart = () => {
   const filterTabs = tabs.filter(table => table.id === 'dummyChart');
@@ -9,7 +10,7 @@ const DummyChart = () => {
     <>
       {filterTabs.map(table => 
         filterTabs.length ?
-          <div key={table.id} className='mt-3'>
+          <div key={table.id} className={`mt-3 ${cl.table__container}`}>
             <h2>{table.title}</h2>
             <Table striped bordered hover>
                 <thead>
